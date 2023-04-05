@@ -1,0 +1,17 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>no of times repeated</th>
+
+  </tr>
+
+  <ng-container *ngFor="let data of mockdata">
+  <tr [ngClass]="{'red': getCount(mockdata,data.name) < 3,
+  'yellow': getCount(mockdata,data.name) < 10 && getCount(mockdata,data.name) > 2,
+  'green': getCount(mockdata,data.name) >= 10 }" >
+    <td> {{data.name}}</td>
+    <td> {{getCount(mockdata,data.name)}} </td>
+  </tr>
+</ng-container>
+</table>
